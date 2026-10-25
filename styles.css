@@ -1,0 +1,32 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
+    border: 1px solid black;
+    width: 275px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 10px;
+}
+
+.display {
+    border: 1px solid black;
+    height: 18px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+}
+
+button {
+    width: 50px;
+    height: 30px;
+}
+
