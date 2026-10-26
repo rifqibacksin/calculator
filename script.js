@@ -35,7 +35,7 @@ let firstNumber = null;
 let secondNumber = null;
 let operator = null;
 let resultDone = false;
-let resetCalculator = true; 
+let resetCalculator = true;
 
 const display = document.querySelector(".display")
 function clear() {
@@ -43,7 +43,7 @@ function clear() {
     firstNumber = null;
     secondNumber = null;
     operator = null;
-    resetCalculator = true; 
+    resetCalculator = true;
 }
 
 function displayText(input) {
@@ -78,7 +78,7 @@ function displayText(input) {
         display.textContent = "";
         displayText(operate(firstNumber, secondNumber, operator));
         resultDone = true;
-        resetCalculator = true; 
+        resetCalculator = true;
         return;
     }
 
@@ -87,8 +87,17 @@ function displayText(input) {
 }
 
 function deleteText() {
-    let text = display.textContent
-    display.textContent = text.slice(0, -1)
+    if (resetCalculator == false) {
+        let text = display.textContent
+        display.textContent = text.slice(0, -1)
+        if (display.textContent.length == 0) {
+            resetCalculator = true;
+            display.textContent = "0";
+        }
+    }
+    else {
+        return;
+    }
 }
 
 const buttons = document.querySelector(".buttons")
