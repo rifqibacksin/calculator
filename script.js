@@ -27,15 +27,14 @@ function operate(number1, number2, operator) {
     }
 }
 
-let currentInput = "";
 let firstNumber = null;
 let secondNumber = null;
 let operator = null;
+let resultDone = false;
 
 const display = document.querySelector(".display")
 function clear() {
     display.textContent = "";
-    currentInput = "";
     firstNumber = null;
     secondNumber = null;
     operator = null;
@@ -43,18 +42,29 @@ function clear() {
 
 function displayText(input) {
     let operators = ["+", "-", "/", "x"];
-    if (operators.includes(input)) {
-        firstNumber = Number(display.textContent);
+    if (input == "%") {
+        if (!firstNumber) {
+            firstNumber = (Number(display.textContent) / 100);
+        }
+        else {
+            secondNumber = Number(display.textContent) / 100
+        }
+    }
+    else if (operators.includes(input)) {
+        if (!firstNumber) {
+            firstNumber = Number(display.textContent);
+        }
         operator = input;
         display.textContent = "";
         return;
     }
     else if (input == "=") {
-        secondNumber = Number(display.textContent);
-        console.log(secondNumber)
-        console.log(firstNumber)
+        if (!secondNumber) {
+            secondNumber = Number(display.textContent);
+        }
         display.textContent = "";
         displayText(operate(firstNumber, secondNumber, operator));
+        resultDone = true;
         return;
     }
 
@@ -63,7 +73,7 @@ function displayText(input) {
 }
 
 function deleteText() {
-    let text = display.textContent 
+    let text = display.textContent
     display.textContent = text.slice(0, -1)
 }
 
@@ -72,6 +82,12 @@ const buttons = document.querySelector(".buttons")
 buttons.addEventListener("click", (event) => {
     event.preventDefault;
     let target = event.target;
+
+    if (resultDone) {
+        clear();
+        resultDone = false;
+    }
+
     switch (target.id) {
         case "clear": {
             clear();
