@@ -12,16 +12,17 @@ body {
 }
 
 .calculator {
-    width: 262px;
-    height: 240px;
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 10px;
+    width: 327.5px;
+    height: 305px;
+    border: 1.5px solid black;
+    border-radius: 15px;
+    padding: 15px 15px 20px;
+    
 
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 5px;
+    gap: 7.5px;
 
     background-color: rgb(34 35 46);
 }
@@ -37,9 +38,9 @@ body {
     display: flex;
     justify-content: flex-end;
 
-    padding: 5px;
-    border: 1px solid black;
-    height: 30px;
+    padding: 7.5px;
+    border: 1.5px solid black;
+    height: 45px;
     width: 100%;
     background-color: rgb(214 222 212);
     color: black; 
@@ -47,8 +48,8 @@ body {
 
 button {
     box-sizing: border-box;
-    width: 56px;
-    height: 30px;
+    width: 70px;
+    height: 37.5px;
     margin: 0px;
     padding: 0px;
     background-color: rgb(34 35 46);
@@ -57,9 +58,10 @@ button {
 
 .buttons {
     display: flex;
-    gap: 2px;
+    gap: 3px;
     margin: 0;
     width: 100%;
+    height: 100%;
 }
 
 .numberpad {
@@ -67,7 +69,7 @@ button {
     min-width: 0;
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 3px;
 }
 
 .operators {
@@ -76,14 +78,14 @@ button {
 
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 3px;
 }
 
 .digits,
 .function {
     display: flex;
     flex-wrap: wrap;
-    gap: 2px;
+    gap: 3px;
 }
 
 .function button {
@@ -95,7 +97,6 @@ button {
 .function button {
     flex: 1 1 calc(33.333% - 2px);
     min-width: 0;
-    height: 30px;
     margin: 0;
     padding: 0;
 }
