@@ -2,11 +2,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
 }
 
 .calculator {
     border: 1px solid black;
-    width: 275px;
+    width: 230px;
     height: 250px;
     display: flex;
     flex-direction: column;
@@ -22,7 +23,8 @@ body {
 .buttons {
     display: flex;
     justify-content: center;
-    gap: 3px;
+    align-items: center;
+    
 }
 
 button {

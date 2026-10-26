@@ -44,13 +44,13 @@ function clear() {
 function displayText(input) {
     let operators = ["+", "-", "/", "x"];
     if (operators.includes(input)) {
-        firstNumber = Number(currentInput);
+        firstNumber = Number(display.textContent);
         operator = input;
         display.textContent = "";
         return;
     }
     else if (input == "=") {
-        secondNumber = Number(currentInput);
+        secondNumber = Number(display.textContent);
         console.log(secondNumber)
         console.log(firstNumber)
         display.textContent = "";
@@ -60,7 +60,11 @@ function displayText(input) {
 
     let text = display.textContent;
     display.textContent = text + input;
-    currentInput = display.textContent;
+}
+
+function deleteText() {
+    let text = display.textContent 
+    display.textContent = text.slice(0, -1)
 }
 
 const buttons = document.querySelector(".buttons")
@@ -68,13 +72,19 @@ const buttons = document.querySelector(".buttons")
 buttons.addEventListener("click", (event) => {
     event.preventDefault;
     let target = event.target;
-    if (target.id == "clear") {
-        clear();
-        return;
-    }
-    if (target.id == "point") {
-        displayText(".")
-        return;
+    switch (target.id) {
+        case "clear": {
+            clear();
+            return;
+        }
+        case "point": {
+            displayText(".")
+            return;
+        }
+        case "delete": {
+            deleteText();
+            return;
+        }
     }
     if (target.matches("button")) {
         displayText(target.id)
