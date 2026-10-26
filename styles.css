@@ -73,7 +73,7 @@ button {
 }
 
 .function button {
-    background-color: rgb(213 137 95);
+    background-color: rgb(87 76 144);
     color: rgb(34 35 46)
 }
 
@@ -91,4 +91,5 @@ button {
     width: 100%;
     min-width: 0;
     margin: 0;
+    background-color: rgb(213 137 95);
 }
