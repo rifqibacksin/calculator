@@ -15,6 +15,9 @@ function divide(a, b) {
 }
 
 function operate(number1, number2, operator) {
+    if (number1 === undefined || number2 === undefined || operator === undefined) {
+        return currentInput;
+    }
     switch (operator) {
         case "+":
             return add(number1, number2)
@@ -27,20 +30,29 @@ function operate(number1, number2, operator) {
     }
 }
 
+let currentInput = null;
 let firstNumber = null;
 let secondNumber = null;
 let operator = null;
 let resultDone = false;
+let resetCalculator = true; 
 
 const display = document.querySelector(".display")
 function clear() {
-    display.textContent = "";
+    display.textContent = "0";
     firstNumber = null;
     secondNumber = null;
     operator = null;
+    resetCalculator = true; 
 }
 
 function displayText(input) {
+
+    if (resetCalculator) {
+        display.textContent = "";
+        resetCalculator = false;
+    }
+
     let operators = ["+", "-", "/", "x"];
     if (input == "%") {
         if (!firstNumber) {
@@ -62,9 +74,11 @@ function displayText(input) {
         if (!secondNumber) {
             secondNumber = Number(display.textContent);
         }
+
         display.textContent = "";
         displayText(operate(firstNumber, secondNumber, operator));
         resultDone = true;
+        resetCalculator = true; 
         return;
     }
 

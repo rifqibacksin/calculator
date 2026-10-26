@@ -18,17 +18,29 @@ body {
 .display {
     border: 1px solid black;
     height: 18px;
+    padding: 5px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .buttons {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    gap: 2px;
+}
+
+.operators {
+    flex-shrink: 1; 
+    width: 56px;
 }
 
 button {
-    width: 50px;
+    width: 56px;
     height: 30px;
+    padding: 0px;
+    margin: 0px;
 }
+
 
