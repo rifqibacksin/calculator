@@ -9,15 +9,16 @@ body {
     background-color: #111318;
     color: #A1A1AA;
     height: 100vh;
+    overflow: hidden;
 }
 
 .calculator {
     width: 327.5px;
     height: 305px;
-    border: 1.5px solid black;
+    border: 1.5px solid rgb(34 35 46);
     border-radius: 15px;
     padding: 15px 15px 20px;
-    
+
 
     display: flex;
     flex-direction: column;
@@ -39,7 +40,7 @@ body {
     justify-content: flex-end;
 
     padding: 7.5px;
-    border: 1.5px solid black;
+    border: 1.5px solid rgb(34 35 46);
     height: 45px;
     width: 100%;
     background-color: rgb(214 222 212);
